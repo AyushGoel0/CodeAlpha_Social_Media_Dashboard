@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>
+        {% if 'twitter_access_token' in session %}
+          Welcome back, {{ session['user_name'] }}!  (Your Twitter is connected)
+        {% else %}
+          Welcome to your social media dashboard!
+        {% endif %}
+      </h1>      
+    <p>Welcome to your social media dashboard!</p>
+    <div>
+        <a href="/connect/twitter" target="_blank">Connect with Twitter</a>
+        <br>
+        <a href="/connect/facebook">Connect with Facebook</a>
+        <br>
+        <a href="/connect/reddit">Connect with Reddit</a>
+        <br>
+        <a href="/connect/instagram">Connect with Instagram</a>
+    </div>
+    <% if 'twitter_token' in session: %>
+    <form method="post" action="/complete/twitter">
+      <label for="pin">Enter PIN from Twitter:</label>
+      <input type="text" name="pin" id="pin">
+      <button type="submit">Submit PIN</button>
+    </form>
+    <% endif %>
+</body>
+</html>
