@@ -4,6 +4,20 @@
 
 This Flask application provides a social media dashboard where users can log in, register, and view their social media feeds, particularly from Reddit. It also allows users to connect their Reddit account to fetch Reddit feeds.
 
+## Folder Structure:
+
+`CodeAlpha_Social_Media_Dashboard/`
+├── `myenv`
+├── `app.py`
+├── `static/`
+│   └── `style.css`
+├── `templates/`
+│   ├── `login.html`
+│   ├── `register.html`
+│   └── `dashboard.html`
+├── `README.md`
+└── `requirements.txt`
+
 ## Installation
 
 1. Clone the repository:
@@ -39,6 +53,8 @@ This Flask application provides a social media dashboard where users can log in,
 - **login.html**: HTML template for the login page.
 - **register.html**: HTML template for the registration page.
 - **dashboard.html**: HTML template for the dashboard page.
+- **static/style.css**: CSS file containing styles for the application.
+
 
 ## Dependencies
 
