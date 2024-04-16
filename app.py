@@ -77,18 +77,14 @@ def login():
         else:
             return render_template('login.html', error='Invalid credentials')
 
-# Assuming you have functions to fetch feeds data from Instagram and Reddit
-
 @app.route('/dashboard')
 def dashboard():
     if 'user_id' in session:
-        # Fetch feeds data from Instagram and Reddit
+        # Fetch feeds data from Reddit
         reddit_data = fetch_reddit_feeds()      # Replace with your function to fetch Reddit feeds
-        # instagram_data = fetch_instagram_posts() # Replace with your function to fetch Instagram posts
 
         return render_template('dashboard.html', username=session['user_id'],
-                               reddit_data=reddit_data)#,
-                            #    instagram_data=instagram_data)
+                               reddit_data=reddit_data)
     else:
         return redirect('/login')
 
