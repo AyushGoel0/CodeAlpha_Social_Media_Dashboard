@@ -6,17 +6,17 @@ This Flask application provides a social media dashboard where users can log in,
 
 ## Folder Structure:
 
-`CodeAlpha_Social_Media_Dashboard/`
-    `myenv`
-    `app.py`
-    `static/`
-        `style.css`
-    `templates/`
-        `login.html`
-        `register.html`
-        `dashboard.html`
-    `README.md`
-    `requirements.txt`
+```CodeAlpha_Social_Media_Dashboard/```
+    ```myenv```
+    ```app.py```
+    ```static/```
+        ```style.css```
+    ```templates/```
+        ```login.html```
+        ```register.html```
+        ```dashboard.html```
+    ```README.md```
+    ```requirements.txt```
 
 ## Installation
 
