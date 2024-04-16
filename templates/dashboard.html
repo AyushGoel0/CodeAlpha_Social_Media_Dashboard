@@ -7,28 +7,27 @@
 </head>
 <body>
     <h1>
-        {% if 'twitter_access_token' in session %}
-          Welcome back, {{ session['user_name'] }}!  (Your Twitter is connected)
+        {% if 'reddit_token' in session %}
+          Welcome back, {{ session['user_id'] }}!  (Your Reddit is connected)
         {% else %}
           Welcome to your social media dashboard!
         {% endif %}
-      </h1>      
+    </h1>      
     <p>Welcome to your social media dashboard!</p>
     <div>
-        <a href="/connect/twitter" target="_blank">Connect with Twitter</a>
-        <br>
-        <a href="/connect/facebook">Connect with Facebook</a>
-        <br>
-        <a href="/connect/reddit">Connect with Reddit</a>
-        <br>
-        <a href="/connect/instagram">Connect with Instagram</a>
+        
+        {% if 'reddit_token' not in session %}
+        <a href="/connect/reddit">Connect with Reddit</a><br>
+        {% endif %}
     </div>
-    <% if 'twitter_token' in session: %>
-    <form method="post" action="/complete/twitter">
-      <label for="pin">Enter PIN from Twitter:</label>
-      <input type="text" name="pin" id="pin">
-      <button type="submit">Submit PIN</button>
-    </form>
-    <% endif %>
+    <!-- Display Reddit Feeds -->
+    {% if 'reddit_data' in session %}
+    <h2>Reddit Feeds</h2>
+    <ul>
+        {% for feed in reddit_data %}
+            <li>{{ feed }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 </body>
 </html>
